@@ -33,7 +33,7 @@ class MainPage(BaseHandler):
     	secretCode = "TotesASecret" + str(randint(0,99999999))
     	state = "state=" + secretCode
     	self.session['state'] = secretCode
-    	redirect = "redirect_uri=http://localhost:8080/redirect"
+    	redirect = "redirect_uri=https://oauth2-166409.appspot.com/redirect"
     	uri = destination + "?" + "response_type=code" + amp + "scope=email" + amp + state + amp + clientID + amp + redirect
         self.response.out.write("""
           <html>
@@ -60,7 +60,7 @@ class RedirectPage(BaseHandler):
 				 'code': code,
 				 'client_id': '548315109344-jacnggnkqf6n8l5t03jcusfti0gjno7b.apps.googleusercontent.com',
 				 'client_secret': '7wZEjBrf1NQWzNyTfiQ25ZPu',
-				 'redirect_uri': 'http://localhost:8080/redirect'}
+				 'redirect_uri': 'https://oauth2-166409.appspot.com/redirect'}
 
 				try:
 					form_data = urllib.urlencode(payload)
